@@ -1,0 +1,77 @@
+configuration {
+}
+
+@theme "dmenu"
+
+* {
+    font: "Input Bold 9";
+    padding: 0;
+    margin: 0;
+}
+
+window {
+    anchor: north;
+    location: north;
+    y-offset: -40;
+
+    width: 60%;
+
+    margin: 10;
+    padding: 2;
+
+    border-radius: 4;
+    border: 0 2 0 0;
+    border-color: #18191a;
+    background-color: #000000;
+}
+
+horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
+}
+
+prompt {
+    padding: 5 10;
+
+    background-color: #ffffff;
+
+    text-color: #000000;
+
+    border-radius: 2;
+}
+
+entry {
+    width: 12em;
+    padding: 5 10;
+
+    background-color: #000000;
+
+    text-color: #ffffff;
+}
+
+listview {
+    background-color: #000000;
+    padding: 0;
+    spacing: 2;
+}
+
+element {
+    background-color: transparent;
+    border-radius: 2;
+    padding: 5 10;
+}
+element-text {
+    background-color: transparent;
+    text-color: #ffffff;
+}
+
+element selected {
+    background-color: #ffffff;
+    border-radius: 2;
+    padding: 5 10;
+}
+element-text selected {
+    background-color: #ffffff;
+    text-color: #000000;
+}
+

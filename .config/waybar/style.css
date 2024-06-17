@@ -1,0 +1,112 @@
+@define-color primary #000000;
+@define-color secondary #ffffff;
+* {
+    font-family: FontAwesome, Input;
+    font-weight: 800; 
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: transparent;
+
+    /*border: 2px solid #1c1c1c;*/
+
+    color: @secondary;
+
+    transition-property: min-width;
+    transition-duration: 1s;
+}
+
+#workspaces {
+    background-color: @primary;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+#workspaces button {
+    margin-right: 2px;
+    padding: 0 6px;
+
+    border-radius: 2px;
+
+    background-color: transparent;
+
+    color: @secondary;
+}
+#workspaces button:last-child {
+    margin-right: 0;
+}
+
+
+#workspaces button:hover {
+}
+
+#workspaces button.focused {
+    color: @primary;
+    background-color: @secondary;
+}
+
+#workspaces button.urgent {
+    color: #eb4747;
+    color: #ff6961;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#custom-media,
+#tray,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mode,
+#mpd {
+    padding: 0 10px;
+    color: @secondary;
+}
+
+.modules-right {
+	border-radius: 4px;
+	padding: 2px;
+	background: @primary;
+	color: @secondary;
+}
+
+window#waybar #window {
+	margin: 0 10px;
+	padding: 0 12px;
+
+	color: @secondary;
+
+	background-color: @primary;
+	border-radius: 4px;
+}
+window#waybar.empty #window {
+	background-color: transparent;
+}
+
+#clock {
+    margin: 0;
+    color: @primary;
+    border-radius: 2px;
+    background-color: @secondary;
+}
+#mode {
+    color: @primary;
+    border-radius: 4px;
+    background-color: #f22222;
+}
+#pulseaudio {
+    background-color: @primary;
+    color: @secondary;
+}
+#pulseaudio:hover {
+    background-color: @secondary;
+    color: @primary;
+}
+
