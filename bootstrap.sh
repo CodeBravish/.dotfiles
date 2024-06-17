@@ -1,8 +1,10 @@
 sudo apt install -y
 	waybar
-	cargo
 
 # FROM SOURCE
+
+## cargo
+curl https://sh.rustup.rs -sSf | sh
 
 ## alacritty
 sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
