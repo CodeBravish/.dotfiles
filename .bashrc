@@ -132,3 +132,4 @@ source /home/sahdeek/alacritty/extra/completions/alacritty.bash
 
 # ALIAS
 alias ls="exa"
+source ~/.bash_completion/alacritty
