@@ -2,6 +2,11 @@
 
 sudo apt install -y
 	waybar
+	exa
+
+# fastfetch
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+sudo apt update
 
 # FROM SOURCE
 

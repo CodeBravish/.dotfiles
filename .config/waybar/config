@@ -5,7 +5,7 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
 
-    "layer": "bottom",
+    "layer": "top",
     "reload_style_on_change": true,
 
     "margin-top": 10,
@@ -17,30 +17,58 @@
         "sway/workspaces",
         "custom/media",
 	"sway/mode",
-    ],
-    "modules-center": [
-        "sway/window",
+        "sway/window"
     ],
     "modules-right": [
+    	"battery",
+	"cpu",
+        "custom/separator",
     	"pulseaudio",
+        "custom/separator",
     	"network",
         "clock",
     ],
+    "custom/separator": {
+        "format": "/",
+    },
+    "custom/name": {
+        "format": "sahdeek@",
+    },
+    "sway/mode": {
+        "format": "R",
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "CPU: {usage}%",
+    },
     "clock": {
-        "format" : "{:%I:%M}"
+    	"interval": 1,
+        "format" : "{:%I:%M}",
+        "format-alt" : "{:%I:%M:%S}",
+        "tooltip-format" : "{:%d/%m/%Y}"
+    },
+    "battery": {
+        "bat": "BAT2",
+    	"interval": 60,
+    	"states": {
+            "warning": 30,
+            "critical": 15
+    	},
+    	"format": "Bat: {}%",
+    	"max-length": 25
     },
     "network" : {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "| WiFi: {signalStrength}% ",
-        "format-ethernet": "| {ipaddr}/{cidr} ",
-        "tooltip-format": "| {essid} via {gwaddr} ",
-        "format-linked": "| {ifname} (No IP)",
-        "format-disconnected": "| Disconnected ⚠ ",
-        "format-alt": "| {ifname}: {ipaddr}/{cidr} "	
+        "format-wifi": "WiFi: {signalStrength}% ",
+        "format-ethernet": " {ipaddr}/{cidr} ",
+        "tooltip-format": "{essid} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠ ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr} "	
     },
     "pulseaudio": {
-    "format": " Volume: {volume}% ",
-    "format-bluetooth": " Volume: {volume}% ",
+    "format": "Volume: {volume}%",
+    "format-bluetooth": "Volume: {volume}%",
     "format-muted": "",
     "format-icons": {
         "alsa_output.pci-0000_00_1f.3.analog-stereo": "",

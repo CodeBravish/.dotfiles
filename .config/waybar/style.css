@@ -1,5 +1,6 @@
 @define-color primary #000000;
 @define-color secondary #ffffff;
+
 * {
     font-family: FontAwesome, Input;
     font-weight: 800; 
@@ -39,6 +40,10 @@ window#waybar {
 
 
 #workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: #000000;
+    border: #000000;
 }
 
 #workspaces button.focused {
@@ -51,34 +56,19 @@ window#waybar {
     color: #ff6961;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#wireplumber,
-#custom-media,
-#tray,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mode,
-#mpd {
-    padding: 0 10px;
-    color: @secondary;
-}
 
+.modules-left > * {
+}
 .modules-right {
 	border-radius: 4px;
 	padding: 2px;
+	padding-left: 12px;
 	background: @primary;
 	color: @secondary;
 }
 
 window#waybar #window {
-	margin: 0 10px;
+	margin: 0 5px;
 	padding: 0 12px;
 
 	color: @secondary;
@@ -92,12 +82,18 @@ window#waybar.empty #window {
 
 #clock {
     margin: 0;
+    padding: 0 10px;
     color: @primary;
     border-radius: 2px;
     background-color: @secondary;
 }
 #mode {
+    margin: 1px 5px;
+    margin-right: 0px;
+    padding: 0 12px;
+
     color: @primary;
+
     border-radius: 4px;
     background-color: #f22222;
 }
@@ -110,3 +106,18 @@ window#waybar.empty #window {
     color: @primary;
 }
 
+
+/*window#waybar #window,
+.modules-right,
+#workspaces {
+    border: 2px #2d2d2d solid;
+}
+window#waybar.empty #window {
+    border: 0px #ffffff solid;
+}*/
+
+#custom-separator {
+    margin: 0 5px; 
+    color: #4d4d4d;
+    color: #ffffff;
+}

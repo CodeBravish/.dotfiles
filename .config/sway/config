@@ -241,9 +241,10 @@ titlebar_padding 5
 title_align center
 
 client.focused "#ffffff" "#ffffff" "#000000" "#0077ff"
-client.unfocused "#000000" "#000000" "#888888"
-client.focused_inactive "#000000" "#000000" "#ffffff"
-client.urgent "#eb4d4b" "#eb4d4b" "#ffffff"
+client.focused "#ffffff" "#ffffff" "#000000" "#ffffff"
+client.unfocused "#000000" "#000000" "#888888" "#000000"
+client.focused_inactive "#000000" "#000000" "#ffffff" "#000000"
+client.urgent "#eb4d4b" "#eb4d4b" "#ffffff" "#000000"
 
 #border_images.focused /home/sahdeek/.config/sway/shadows.png
 #border_images.focused_inactive /home/sahdeek/.config/sway/shadows.png
@@ -253,7 +254,7 @@ client.urgent "#eb4d4b" "#eb4d4b" "#ffffff"
 # WALLPAPER
 output * background #d8e0e6 solid_color
 output * background #18191a solid_color
-#output * background $HOME/.config/sway/background.png fill
+output * background $HOME/.config/sway/background.png fill
 
 # FONT
 font pango:Input Bold 10
@@ -266,6 +267,6 @@ exec swayidle -w \
     timeout 610 'swaylock -f -c 000000' \
     before-sleep 'swaylock -f -c 000000'
 
-workspace 8 output DP-1
+workspace 7 output DP-1
 workspace 1 output HDMI-A-1
 

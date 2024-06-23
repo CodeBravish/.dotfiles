@@ -10,18 +10,16 @@ configuration {
 }
 
 window {
-    anchor: north;
-    location: north;
+    anchor: north east;
+    location: north east;
     y-offset: -40;
 
-    width: 60%;
+    width: 50%;
 
     margin: 10;
     padding: 2;
 
     border-radius: 4;
-    border: 0 2 0 0;
-    border-color: #18191a;
     background-color: #000000;
 }
 
