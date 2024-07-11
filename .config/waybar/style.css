@@ -1,10 +1,11 @@
-@define-color primary #000000;
-@define-color secondary #ffffff;
+@define-color primary #ffffff;
+@define-color secondary #000000;
 
 * {
     font-family: FontAwesome, Input;
     font-weight: 800; 
     font-size: 13px;
+    border-radius: 0;
 }
 
 window#waybar {
@@ -13,14 +14,12 @@ window#waybar {
     /*border: 2px solid #1c1c1c;*/
 
     color: @secondary;
-
-    transition-property: min-width;
-    transition-duration: 1s;
 }
 
 #workspaces {
     background-color: @primary;
     border-radius: 4px;
+
     padding: 2px;
 }
 
@@ -28,7 +27,7 @@ window#waybar {
     margin-right: 2px;
     padding: 0 6px;
 
-    border-radius: 2px;
+    border-radius: 3px;
 
     background-color: transparent;
 
@@ -42,8 +41,8 @@ window#waybar {
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    background: #000000;
-    border: #000000;
+    background: @primary;
+    border-color: @secondary;
 }
 
 #workspaces button.focused {
@@ -56,11 +55,9 @@ window#waybar {
     color: #ff6961;
 }
 
-
-.modules-left > * {
-}
 .modules-right {
 	border-radius: 4px;
+
 	padding: 2px;
 	padding-left: 12px;
 	background: @primary;
@@ -84,7 +81,8 @@ window#waybar.empty #window {
     margin: 0;
     padding: 0 10px;
     color: @primary;
-    border-radius: 2px;
+    border-radius: 3px;
+
     background-color: @secondary;
 }
 #mode {
@@ -95,15 +93,16 @@ window#waybar.empty #window {
     color: @primary;
 
     border-radius: 4px;
+
     background-color: #f22222;
 }
 #pulseaudio {
     background-color: @primary;
     color: @secondary;
 }
-#pulseaudio:hover {
-    background-color: @secondary;
-    color: @primary;
+#tray {
+    padding-left: 3px;
+    padding-right: 4px;
 }
 
 
@@ -118,6 +117,5 @@ window#waybar.empty #window {
 
 #custom-separator {
     margin: 0 5px; 
-    color: #4d4d4d;
-    color: #ffffff;
+    color: @secondary;
 }

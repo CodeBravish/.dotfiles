@@ -132,3 +132,10 @@ source /home/sahdeek/alacritty/extra/completions/alacritty.bash
 
 # ALIAS
 alias ls="exa"
+
+# AppImages
+export PATH="$PATH:$HOME/bin"
+
+#Sway
+export WLR_NO_HARDWARE_CURSORS=1
+export XWAYLAND_NO_GLAMOR=1
