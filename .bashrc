@@ -135,7 +135,9 @@ alias ls="exa"
 
 # AppImages
 export PATH="$PATH:$HOME/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 #Sway
 export WLR_NO_HARDWARE_CURSORS=1
 export XWAYLAND_NO_GLAMOR=1
+. "$HOME/.cargo/env"

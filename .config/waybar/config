@@ -19,6 +19,9 @@
         "sway/mode",
         "sway/window"
     ],
+    "modules-center": [
+        "custom/name"
+    ],
     "modules-right": [
         "battery",
         "cpu",
@@ -26,7 +29,7 @@
         "pulseaudio",
         "custom/separator",
         "network",
-        "clock"
+        "clock",
     ],
     "tray": {
         "icon-size": 16,
@@ -52,7 +55,6 @@
         "tooltip-format": "{:%d/%m/%Y}"
     },
     "battery": {
-        "bat": "BAT2",
         "interval": 60,
         "states": {
             "warning": 30,
@@ -71,23 +73,11 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr} "
     },
     "pulseaudio": {
-        "format": "Volume:{volume:3}%",
-        "format-bluetooth": "Volume:{volume:3}%",
-        "format-muted": "",
-        "format-icons": {
-            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "phone-muted": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
-        },
+        "format": "Volume: {volume:02}%",
+        "format-bluetooth": "Volume: {volume:02}%",
+        "format-muted": "Muted",
         "scroll-step": 1,
-        "on-click": "pulseaudio -k",
+        "on-click": "pulseaudio -k && pkill waybar; waybar &",
         "ignored-sinks": ["Easy Effects Sink"]
     }
 }

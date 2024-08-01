@@ -119,3 +119,6 @@ window#waybar.empty #window {
     margin: 0 5px; 
     color: @secondary;
 }
+#custom-name {
+    color: @primary;
+}
