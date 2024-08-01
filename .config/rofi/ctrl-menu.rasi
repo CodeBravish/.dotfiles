@@ -1,0 +1,88 @@
+configuration {
+    modi: "Power:~/.config/rofi/control-center/power.sh,WiFi:~/.config/rofi/control-center/wifi.sh,Utils:~/.config/rofi/control-center/utils.sh";
+}
+
+@theme "dmenu"
+
+* {
+    font: "Input Bold 9";
+    padding: 0;
+    margin: 0;
+    bg: white;
+    fg: black;
+    background-color: @bg;
+    color: @fg;
+}
+
+window {
+    anchor: north east;
+    location: north east;
+    x-offset: -0;
+
+    /* width: 382px; */
+    width: 250px;
+
+    margin: 10px;
+    padding: 3px;
+
+    border-radius: 5px;
+    border-color: @fg;
+    background-color: @bg;
+    children: [mode-switcher, listview];
+}
+
+mode-switcher {
+    margin: 0 0 4px 0;
+    /* background-color: black; */
+}
+
+button {
+    padding: 6px 12px;
+
+    color: @fg;
+
+    background-color: @bg;
+    border-radius: 4px;
+    border: 2px;
+    border-color: @bg;
+}
+button selected {
+    color: @fg;
+
+    background-color: @bg;
+    border-color: @fg;
+}
+
+listview {
+    /* margin: 5px 0 0 0; */
+    padding: 0;
+
+    background-color: @bg;
+
+    layout: vertical;
+    spacing: 5px;
+    lines: 10;
+    fixed-height: false;
+}
+
+element {
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+element-text {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element selected {
+    background-color: @fg;
+    padding: 5px 10px;
+
+    /* border: 2px;
+    border-color: @fg; */
+}
+element-text selected {
+    background-color: transparent;
+    text-color: @bg;
+}
