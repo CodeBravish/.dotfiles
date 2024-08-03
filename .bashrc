@@ -128,7 +128,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 
 # JAVA
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-source /home/sahdeek/alacritty/extra/completions/alacritty.bash
 
 # ALIAS
 alias ls="exa"
@@ -140,4 +139,3 @@ export PATH="$HOME/.local/bin:$PATH"
 #Sway
 export WLR_NO_HARDWARE_CURSORS=1
 export XWAYLAND_NO_GLAMOR=1
-. "$HOME/.cargo/env"

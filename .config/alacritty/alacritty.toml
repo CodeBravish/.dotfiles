@@ -5,4 +5,5 @@ import = [
 
 [font]
 
-normal = { family = "Input", style = "Regular"}
+normal = { family = "Input Mono", style = "Regular"}
+size = 10

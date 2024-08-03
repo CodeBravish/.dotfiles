@@ -259,7 +259,7 @@ output * background #18191a solid_color
 output * background $HOME/.config/sway/background.png fill
 
 # FONT
-font pango:Input Bold 10
+font pango:InputMono Bold 10
 
 # EXEC
 exec waybar &
