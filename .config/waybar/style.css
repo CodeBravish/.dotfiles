@@ -2,9 +2,9 @@
 @define-color secondary #000000;
 
 * {
-    font-family: FontAwesome, Input Mono;
+    font-family: FontAwesome, InputMono;
     font-weight: 800; 
-    font-size: 13px;
+    font-size: 12px;
     border-radius: 0;
 }
 

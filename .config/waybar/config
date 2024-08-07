@@ -1,6 +1,5 @@
 // -*- mode: jsonc -*-
 {
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
@@ -12,21 +11,31 @@
     "margin-right": 10,
     "margin-left": 10,
 
+    //"position": "bottom", // Waybar position (top|bottom|left|right)
+    //"margin-top": 0,
+    //"margin-bottom": 10,
+
     // Choose the order of the modules
-    "modules-left": [
-        "sway/workspaces",
-        "custom/media",
-        "sway/mode",
-        "sway/window"
-    ],
-    "modules-center": [
-        "custom/name"
-    ],
+   "modules-left": [
+       "sway/workspaces",
+       "custom/media",
+       "sway/mode",
+       "sway/window"
+   ],
+   //"modules-left": [
+   //    "hyprland/workspaces",
+   //    "custom/media",
+   //    "hyprland/mode",
+   //    "hyprland/window"
+   //],
+//    "modules-center": [
+//        "custom/name"
+//    ],
     "modules-right": [
         "battery",
         "cpu",
         "custom/separator",
-        "pulseaudio",
+        "wireplumber",
         "custom/separator",
         "network",
         "clock",
@@ -72,12 +81,12 @@
         "format-disconnected": "Disconnected ⚠ ",
         "format-alt": "{ifname}: {ipaddr}/{cidr} "
     },
-    "pulseaudio": {
+    "wireplumber": {
         "format": "Volume: {volume:02}%",
         "format-bluetooth": "Volume: {volume:02}%",
         "format-muted": "Muted",
+        "max-volume": 100,
         "scroll-step": 1,
-        "on-click": "pulseaudio -k && pkill waybar; waybar &",
-        "ignored-sinks": ["Easy Effects Sink"]
+        "on-click": "systemctl --user restart pipewire.service && pkill waybar; waybar &",
     }
 }

@@ -71,7 +71,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec rofi -show run -matching fuzzy
+    bindsym $mod+d exec rofi -show drun -matching fuzzy -terminal kitty
     bindsym $mod+i exec rofi -show Power -config ~/.config/rofi/ctrl-menu.rasi
     # bindsym $mod+i exec ~/.config/rofi/control-center/mode-list.sh
 
@@ -246,7 +246,7 @@ client.focused "#ffffff" "#ffffff" "#000000" "#0077ff"
 client.focused "#ffffff" "#ffffff" "#000000" "#ffffff"
 client.unfocused "#000000" "#000000" "#888888" "#000000"
 client.focused_inactive "#000000" "#000000" "#ffffff" "#000000"
-client.urgent "#eb4d4b" "#eb4d4b" "#ffffff" "#000000"
+client.urgent "#eb4d4b" "#eb4d4b" "#ffffff" "#eb4d4b"
 
 #border_images.focused /home/sahdeek/.config/sway/shadows.png
 #border_images.focused_inactive /home/sahdeek/.config/sway/shadows.png
