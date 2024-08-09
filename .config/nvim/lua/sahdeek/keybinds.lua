@@ -1,8 +1,13 @@
-local function map(m, k, v)
+function Map(m, k, v)
     vim.keymap.set(m, k, v, { noremap = true, silent = true })
 end
 
-map('n', '<C-H>', '<C-w>h')
-map('n', '<C-J>', '<C-w>j')
-map('n', '<C-K>', '<C-w>k')
-map('n', '<C-L>', '<C-w>l')
+-- Window Navigation
+Map('n', '<C-H>', '<C-w>h')
+Map('n', '<C-J>', '<C-w>j')
+Map('n', '<C-K>', '<C-w>k')
+Map('n', '<C-L>', '<C-w>l')
+
+-- Clipboard
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])

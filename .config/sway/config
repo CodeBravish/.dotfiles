@@ -262,7 +262,7 @@ output * background $HOME/.config/sway/background.png fill
 font pango:InputMono Bold 10
 
 # EXEC
-exec waybar &
+exec waybar --config ~/.config/waybar/sway.jsonc &
 exec swayidle -w \
     timeout 600 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \

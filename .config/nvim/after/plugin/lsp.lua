@@ -3,7 +3,7 @@ local lsp_zero = require('lsp-zero')
 -- lsp_attach is where you enable features that only work
 -- if there is a language server active in the file
 local lsp_attach = function(client, bufnr)
-    local opts = {buffer = bufnr}
+    local opts = { buffer = bufnr }
 
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
@@ -13,7 +13,7 @@ local lsp_attach = function(client, bufnr)
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+    vim.keymap.set({ 'n', 'x' }, '<A-F>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 end
 
@@ -27,12 +27,21 @@ lsp_zero.extend_lspconfig({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    -- Replace the language servers listed here 
+    -- Replace the language servers listed here
     -- with the ones you want to install
-    ensure_installed = {'lua_ls', 'rust_analyzer', 'eslint'},
+    ensure_installed = { 'lua_ls', 'rust_analyzer', 'eslint' },
     handlers = {
-        function(server_name)
-            require('lspconfig')[server_name].setup({})
+        function(lua_ls)
+            require('lspconfig')["lua_ls"].setup({
+                settings = {
+                    Lua = {
+                        runtime = { version = "Lua 5.1" },
+                        diagnostics = {
+                            globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
+                        }
+                    }
+                }
+            })
         end,
     },
 })
@@ -41,15 +50,16 @@ require('mason-lspconfig').setup({
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
-local cmp_format = require('lsp-zero').cmp_format({details = true})
+local cmp_format = require('lsp-zero').cmp_format({ details = true })
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
     sources = {
-        {name = 'nvim_lsp'},
-        {name = 'buffer'},
-        {name = 'luasnip'},
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'luasnip' },
     },
     snippet = {
         expand = function(args)
@@ -59,8 +69,10 @@ cmp.setup({
         end,
     },
     mapping = cmp.mapping.preset.insert({
-        -- confirm completion
-        ['<C-y>'] = cmp.mapping.confirm({select = true}),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
 
         -- scroll up and down the documentation window
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -72,8 +84,8 @@ cmp.setup({
 
     formatting = cmp_format,
 
-    preselect = 'item',
-    completion = {
-        completeopt = 'menu,menuone,noinsert'
-    },
+   --preselect = 'item',
+   --completion = {
+   --    completeopt = 'menu,menuone,noinsert'
+   --},
 })

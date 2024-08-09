@@ -1,0 +1,18 @@
+{
+    "include": "~/.config/waybar/config.jsonc",
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/media",
+        "hyprland/submap",
+        "hyprland/window"
+    ],
+
+    "hyprland/submap": {
+        "format": "R"
+    },
+
+    "hyprland/workspaces": {
+        "all-outputs": false,
+   }
+}

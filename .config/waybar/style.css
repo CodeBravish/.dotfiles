@@ -38,14 +38,16 @@ window#waybar {
 }
 
 
-#workspaces button:hover {
+#workspaces button:hover,
+#workspaces button.visible {
     box-shadow: inherit;
     text-shadow: inherit;
     background: @primary;
     border-color: @secondary;
 }
 
-#workspaces button.focused {
+#workspaces button.focused,
+#workspaces button.active {
     color: @primary;
     background-color: @secondary;
 }
@@ -85,7 +87,7 @@ window#waybar.empty #window {
 
     background-color: @secondary;
 }
-#mode {
+#mode, #submap {
     margin: 1px 5px;
     margin-right: 0px;
     padding: 0 12px;

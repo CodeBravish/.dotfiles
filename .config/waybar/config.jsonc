@@ -16,18 +16,6 @@
     //"margin-bottom": 10,
 
     // Choose the order of the modules
-   "modules-left": [
-       "sway/workspaces",
-       "custom/media",
-       "sway/mode",
-       "sway/window"
-   ],
-   //"modules-left": [
-   //    "hyprland/workspaces",
-   //    "custom/media",
-   //    "hyprland/mode",
-   //    "hyprland/window"
-   //],
 //    "modules-center": [
 //        "custom/name"
 //    ],
@@ -49,9 +37,6 @@
     },
     "custom/name": {
         "format": "sahdeek@"
-    },
-    "sway/mode": {
-        "format": "R"
     },
     "cpu": {
         "interval": 5,
