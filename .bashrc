@@ -139,3 +139,5 @@ export PATH="$HOME/.local/bin:$PATH"
 #Sway
 export WLR_NO_HARDWARE_CURSORS=1
 export XWAYLAND_NO_GLAMOR=1
+
+export QSYS_ROOTDIR="/home/sahdeek/intelFPGA_lite/23.1std/quartus/sopc_builder/bin"

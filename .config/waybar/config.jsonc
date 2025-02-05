@@ -7,9 +7,9 @@
     "layer": "top",
     "reload_style_on_change": true,
 
-    "margin-top": 10,
-    "margin-right": 10,
-    "margin-left": 10,
+    "margin-top": 5,
+    "margin-right": 5,
+    "margin-left": 5,
 
     //"position": "bottom", // Waybar position (top|bottom|left|right)
     //"margin-top": 0,
@@ -21,7 +21,10 @@
 //    ],
     "modules-right": [
         "battery",
+        "custom/separator",
         "cpu",
+        "custom/separator",
+	"backlight",
         "custom/separator",
         "wireplumber",
         "custom/separator",
@@ -49,12 +52,12 @@
         "tooltip-format": "{:%d/%m/%Y}"
     },
     "battery": {
-        "interval": 60,
+        "interval": 1,
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": "Bat: {}%",
+        "format": "Power: {}%",
         "max-length": 25
     },
     "network": {
@@ -73,5 +76,8 @@
         "max-volume": 100,
         "scroll-step": 1,
         "on-click": "systemctl --user restart pipewire.service && pkill waybar; waybar &",
+    },
+    "backlight": {
+	"format": "Display: {percent:02}%",
     }
 }

@@ -223,6 +223,15 @@ include /etc/sway/config.d/*
 # ADDITIONAL CONFIG
 focus_follows_mouse no
 
+# Multimedia
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl -a stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioRaiseVolume  exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume  exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 
 # MONITOR
 
@@ -265,11 +274,9 @@ font pango:InputMono Bold 10
 exec waybar --config ~/.config/waybar/sway.jsonc &
 exec swayidle -w \
     timeout 600 'swaymsg "output * dpms off"' \
-        resume 'swaymsg "output * dpms on"' \
+        resume 'swaymsg "output * dpms on" && modprobe -r hid_multitouch && modprobe hid_multitouch' \
     timeout 610 'swaylock -f -c 000000' \
     before-sleep 'swaylock -f -c 000000' \
     timeout 7200 'systemctl suspend' \
 
-workspace 7 output DP-1
-workspace 1 output HDMI-A-1
-
+include ./laptop.conf

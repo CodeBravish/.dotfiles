@@ -1,9 +1,9 @@
-@define-color primary #ffffff;
-@define-color secondary #000000;
+@define-color primary #000000;
+@define-color secondary #ffffff;
 
 * {
     font-family: FontAwesome, InputMono;
-    font-weight: 800; 
+    font-weight: 700; 
     font-size: 12px;
     border-radius: 0;
 }
@@ -67,7 +67,7 @@ window#waybar {
 }
 
 window#waybar #window {
-	margin: 0 5px;
+	margin: 0 2px;
 	padding: 0 12px;
 
 	color: @secondary;
@@ -88,7 +88,7 @@ window#waybar.empty #window {
     background-color: @secondary;
 }
 #mode, #submap {
-    margin: 1px 5px;
+    margin: 1px 2px;
     margin-right: 0px;
     padding: 0 12px;
 
@@ -123,4 +123,11 @@ window#waybar.empty #window {
 }
 #custom-name {
     color: @primary;
+}
+
+#battery.critical {
+    color: #f22222;
+}
+#battery.charging {
+    color: #77DD77;
 }

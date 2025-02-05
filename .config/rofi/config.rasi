@@ -8,8 +8,8 @@ configuration {
     font: "InputMono Bold 9";
     padding: 0;
     margin: 0;
-    bg: #ffffff;
-    fg: #000000;
+    bg: #000000;
+    fg: #ffffff;
     background-color: @bg;
     color: @fg;
     outer-border: 4px;
