@@ -1,4 +1,8 @@
 {
+    "margin-top": 10,
+    "margin-right": 10,
+    "margin-left": 10,
+
     "include": "~/.config/waybar/config.jsonc",
 
     "modules-left": [
@@ -13,6 +17,6 @@
     },
 
     "sway/workspaces": {
-        "all-outputs": true,
+//        "all-outputs": true,
    }
 }

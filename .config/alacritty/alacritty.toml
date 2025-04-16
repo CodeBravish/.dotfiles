@@ -1,9 +1,11 @@
-import = [
-    "~/.config/alacritty/themes/themes/pastel_dark.toml"
-]
 
 
 [font]
 
 normal = { family = "Input Mono", style = "Regular"}
 size = 10
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/pastel_dark.toml"
+]

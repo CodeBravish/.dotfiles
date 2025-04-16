@@ -72,6 +72,6 @@
         "format-muted": "Muted",
         "max-volume": 100,
         "scroll-step": 1,
-        "on-click": "systemctl --user restart pipewire.service && pkill waybar; waybar &",
+        "on-click": "systemctl --user restart pipewire.service",
     }
 }

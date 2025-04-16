@@ -38,12 +38,14 @@ window#waybar {
 }
 
 
-#workspaces button:hover,
-#workspaces button.visible {
+#workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
     background: @primary;
     border-color: @secondary;
+}
+#workspaces button.visible {
+    background: #cccccc;
 }
 
 #workspaces button.focused,

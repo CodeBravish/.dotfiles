@@ -1,4 +1,8 @@
 {
+    "margin-top": 8,
+    "margin-right": 8,
+    "margin-left": 8,
+
     "include": "~/.config/waybar/config.jsonc",
 
     "modules-left": [
